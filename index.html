@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="一般社団法人カラットは、社会的養護のもとを離れる若者や、家庭で暮らすことが難しい若者のための自立援助ホームを運営します。">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>一般社団法人カラット</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+/* Layout: 一枚の縦長ページ。紺の夜明けのヒーロー → 白地の本文 → 法人概要の台帳風表。 */
+:root{
+  --navy:#1d2c4c; --navy-2:#2b3d63; --gold:#c9a24a; --gold-soft:#e9d9ab;
+  --bg:#fbfaf7; --surface:#ffffff; --ink:#1f2433; --muted:#5d6475; --line:#e3e1da;
+  --on-navy:#f4f1e8;
+  --display:"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho",serif;
+  --body:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#12182a; --surface:#1a2238; --ink:#ebe8df; --muted:#a6acbd; --line:#2c3550;
+  --navy:#0d1324; --navy-2:#1d2c4c; --gold:#d8b45f; --gold-soft:#4a4128; --on-navy:#f4f1e8; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#12182a; --surface:#1a2238; --ink:#ebe8df; --muted:#a6acbd; --line:#2c3550;
+  --navy:#0d1324; --navy-2:#1d2c4c; --gold:#d8b45f; --gold-soft:#4a4128; --on-navy:#f4f1e8; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.9;letter-spacing:.02em}
+.wrap{max-width:960px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);font-weight:700;text-wrap:balance;line-height:1.5;margin:0}
+
+/* header */
+.top{background:var(--navy);color:var(--on-navy)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:18px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand small{display:block;font-size:11px;letter-spacing:.12em;opacity:.75;line-height:1.3}
+.brand strong{font-family:var(--display);font-size:20px;letter-spacing:.1em;line-height:1.3}
+nav{display:flex;gap:18px;flex-wrap:wrap;font-size:13px}
+nav a{text-decoration:none;opacity:.85}
+nav a:hover,nav a:focus-visible{opacity:1;text-decoration:underline;text-underline-offset:4px}
+
+/* hero */
+.hero{background:linear-gradient(180deg,var(--navy) 0%,var(--navy-2) 100%);color:var(--on-navy);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center;padding-block:56px 72px}
+.hero h1{font-size:clamp(28px,5vw,44px);letter-spacing:.08em}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero p{max-width:30em;opacity:.9;margin:20px 0 0}
+.hero .note{display:inline-block;margin-top:28px;font-size:13px;border:1px solid color-mix(in srgb,var(--gold) 60%,transparent);color:var(--gold);padding:6px 14px;border-radius:999px;letter-spacing:.08em}
+.mark{width:100%;max-width:260px;justify-self:center}
+
+/* sections */
+section{padding-block:72px;border-bottom:1px solid var(--line)}
+.eyebrow{font-size:12px;letter-spacing:.24em;color:var(--gold);font-weight:700;text-transform:uppercase;margin-bottom:8px}
+:root:not([data-theme="dark"]) .eyebrow{color:#9a7a2c}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .eyebrow{color:var(--gold)}}
+h2{font-size:clamp(22px,3.4vw,30px);margin-bottom:24px}
+.lead{max-width:38em}
+.lead p{margin:0 0 1em}
+
+.concept{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px}
+.concept div{border-top:2px solid var(--gold);padding-top:16px}
+.concept h3{font-size:18px;margin-bottom:8px}
+.concept p{margin:0;color:var(--muted);font-size:15px}
+
+.service{display:grid;grid-template-columns:1fr 1fr;gap:16px 32px;margin-top:32px}
+.service div{min-width:0}
+.service h3{font-size:17px;margin-bottom:4px;font-family:var(--body)}
+.service p{margin:0;color:var(--muted);font-size:15px}
+.service h3::before{content:"◆";color:var(--gold);font-size:11px;margin-right:8px;vertical-align:2px}
+
+.target{margin-top:32px;background:var(--surface);border:1px solid var(--line);padding:24px;border-radius:6px;max-width:44em}
+.target dt{font-weight:700;font-size:14px;color:var(--muted)}
+.target dd{margin:0 0 12px}
+.target dd:last-child{margin-bottom:0}
+
+.quote{font-family:var(--display);font-size:clamp(19px,2.6vw,24px);line-height:1.9;max-width:28em;margin:0 0 24px}
+.message{font-family:var(--display);font-size:clamp(17px,2.2vw,20px);line-height:2.1;border-left:2px solid var(--gold);padding:4px 0 4px 20px;margin:8px 0 28px;max-width:30em}
+.message p{margin:0 0 .4em}
+
+table{width:100%;border-collapse:collapse;font-size:15px}
+.tbl{overflow-x:auto}
+th,td{text-align:left;padding:14px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{width:9em;color:var(--muted);font-weight:500;white-space:nowrap}
+.ph{background:var(--gold-soft);padding:0 4px;border-radius:3px}
+
+.notice{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:24px;max-width:44em}
+.notice p{margin:0 0 .6em}
+.notice p:last-child{margin:0;color:var(--muted);font-size:14px}
+
+.en p{max-width:40em;color:var(--muted);font-size:15px;line-height:1.8;margin:0 0 1em}
+
+.contact{display:flex;gap:24px;flex-wrap:wrap;margin-top:8px}
+.contact div{min-width:0}
+.contact span{display:block;font-size:13px;color:var(--muted)}
+.contact b{font-size:20px;font-weight:500;letter-spacing:.04em;font-variant-numeric:tabular-nums;user-select:all}
+
+footer{background:var(--navy);color:var(--on-navy);font-size:13px}
+footer .wrap{padding-block:28px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;opacity:.85}
+
+@media (max-width:720px){
+  .hero .wrap{grid-template-columns:1fr;padding-block:40px 56px}
+  .mark{max-width:160px;justify-self:start;order:-1}
+  .concept,.service{grid-template-columns:1fr}
+  section{padding-block:56px}
+  th{width:6.5em}
+}
+</style>
+<style>html{scroll-behavior:smooth}body{margin:0;font-size:16px}img{max-width:100%}</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <svg width="34" height="34" viewBox="0 0 120 120" aria-hidden="true"><path d="M30 44 L52 22 L88 30 L98 66 L74 98 L36 92 L22 64 Z" fill="none" stroke="#f4f1e8" stroke-width="5" stroke-linejoin="round" stroke-dasharray="190 40" stroke-dashoffset="-6"/><path d="M84 18 L96 34 L84 50 L72 34 Z" fill="#c9a24a"/></svg>
+      <span><small>一般社団法人</small><strong>カラット</strong></span>
+    </a>
+    <nav aria-label="ページ内">
+      <a href="#about">私たちについて</a>
+      <a href="#service">事業内容</a>
+      <a href="#org">法人概要</a>
+      <a href="#koukoku">電子公告</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <h1>可能性を<br><em>解放する</em></h1>
+      <p>一般社団法人カラットは、社会的養護のもとを離れる若者や、家庭で暮らすことが難しい若者のための自立援助ホームを運営します。人生の分岐点に立つ若者が、自身の本来の輝きを放ち、自らの人生を歩き出すための一歩を支えます。</p>
+    </div>
+    <svg class="mark" viewBox="0 0 240 240" role="img" aria-label="カラットのロゴマーク：原石から光が生まれる">
+      <g stroke="#c9a24a" stroke-width="3" stroke-linecap="round" opacity=".85">
+        <line x1="170" y1="42" x2="170" y2="14"/><line x1="196" y1="66" x2="224" y2="66"/>
+        <line x1="189" y1="47" x2="208" y2="28"/><line x1="151" y1="47" x2="136" y2="32"/>
+        <line x1="189" y1="85" x2="206" y2="102"/>
+      </g>
+      <path d="M58 92 L100 50 L150 60" fill="none" stroke="#f4f1e8" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+      <path d="M186 110 L196 138 L150 200 L74 188 L44 132 L58 92" fill="none" stroke="#f4f1e8" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+      <path d="M170 42 L192 66 L170 90 L148 66 Z" fill="#c9a24a"/>
+    </svg>
+  </div>
+</div>
+
+<main>
+  <section id="about">
+    <div class="wrap">
+      <div class="eyebrow">About</div>
+      <h2>私たちについて</h2>
+      <div class="lead">
+        <p>人は誰しも魅力を持っています。それは宝石や金のように美しく輝いているものです。もしかしたらまだ原石の状態かも知れません。その魅力を最大限に発揮することで、自分の人生を能動的に生きることができます。</p>
+        <p>けれど、その魅力が周りの環境によって覆われてしまったり、隠して生きなければならなかったりすることがあります。そうなると自分の人生が誰のものなのか、自分にどんな価値があるのかも分からなくなってしまいます。</p>
+        <p>人生には、いろいろなことが起こります。目の前に次々と現れる壁を乗り越えていくことが必要です。ただ、どうしても自分の力だけでは越えられない壁もあります。</p>
+        <p>私たちはそんなときの力になりたいと考えています。人生の分岐点に立つ子どもたちの居場所となり、それぞれが輝き、自分の人生を生きることができるように支援します。</p>
+      </div>
+      <div class="concept">
+        <div><h3>一緒に考える</h3><p>答えを先に決めるのではなく、本人の思いを聞きながら、これからの道を一緒に考えます。</p></div>
+        <div><h3>手を差し伸べる</h3><p>ひとりでは越えられない壁にぶつかったときは、ためらわずに手を差し伸べます。</p></div>
+        <div><h3>背中を押す</h3><p>一歩を踏み出そうとするときには、その背中を後押しします。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="service">
+    <div class="wrap">
+      <div class="eyebrow">Service</div>
+      <h2>事業内容：自立援助ホーム</h2>
+      <div class="lead">
+        <p>自立援助ホームは、児童福祉法に基づく「児童自立生活援助事業」として、家庭や児童養護施設などを離れた若者が、共同生活を送りながら社会的な自立をめざす住まいです。</p>
+      </div>
+      <div class="service">
+        <div><h3>安心できる住まいと生活</h3><p>個室での暮らしと、職員がそばにいる共同生活。食事や生活リズムを整えるところから一緒に取り組みます。</p></div>
+        <div><h3>就労・就学の応援</h3><p>仕事探しや職場での悩み、進学や就労の相談に寄り添い、続けられる形を一緒に考えます。</p></div>
+        <div><h3>暮らしの力を身につける</h3><p>家計の管理、貯金、手続き、料理や掃除など、ひとり暮らしに必要な力を日々の生活の中で身につけます。</p></div>
+        <div><h3>退所後もつながり続ける</h3><p>ホームを出たあとも、困ったときに相談できる関係を大切にします。巣立ってからが本当のスタートです。</p></div>
+      </div>
+      <dl class="target">
+        <dt>対象となる方</dt>
+        <dd>義務教育を終えた若者で、児童養護施設・里親家庭などを離れる方や、家庭で暮らすことが難しく、自立に向けた支援を必要とする方（入居は児童相談所を通じて決まります）</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section id="name">
+    <div class="wrap">
+      <div class="eyebrow">Our Name</div>
+      <h2>「カラット」に込めた想い</h2>
+      <p class="quote">カラットは、宝石の質量と、金の純度を表す単位です。</p>
+      <div class="message">
+        <p>どんなことがあろうと、君の輝きは失われない。</p>
+        <p>仮に、今は辛く、苦しくても、暗くても、輝けていなくても、君の価値は失われない。</p>
+        <p>曇ってしまっていても、磨けばまた輝く。</p>
+      </div>
+      <div class="lead">
+        <p>私たちは、子どもたちが本来持っている輝きを放つことができるよう、環境を整え、大切に磨きます。子どもたちの進む先には、カラッと晴れた空が広がっています。その空のもと、磨かれた宝石は、より一層輝くでしょう。</p>
+        <p>ロゴマークは、覆われていた輝きが外へ放たれ、太陽のように光る瞬間を表しています。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="org">
+    <div class="wrap">
+      <div class="eyebrow">Organization</div>
+      <h2>法人概要</h2>
+      <div class="tbl">
+        <table>
+          <tr><th>名称</th><td>一般社団法人カラット（Karat Association）</td></tr>
+          <tr><th>代表理事</th><td>志賀 勇</td></tr>
+          <tr><th>設立</th><td>2026年7月</td></tr>
+          <tr><th>法人区分</th><td>非営利型一般社団法人</td></tr>
+          <tr><th>所在地</th><td>〒194-0013　東京都町田市原町田4-11-13 天野ビル4F</td></tr>
+          <tr><th>事業</th><td>自立援助ホーム（児童自立生活援助事業）の運営、社会的養護を経験した若者の自立支援</td></tr>
+          <tr><th>公告方法</th><td>電子公告（本ページ「電子公告」欄に掲載）</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="koukoku">
+    <div class="wrap">
+      <div class="eyebrow">Public Notice</div>
+      <h2>電子公告</h2>
+      <div class="notice">
+        <p>当法人の公告は、電子公告により本ページに掲載いたします。</p>
+        <p>現在、掲載中の公告はありません。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="english" class="en">
+    <div class="wrap">
+      <div class="eyebrow">English</div>
+      <h2>About Karat Association</h2>
+      <p>Karat Association is a nonprofit general incorporated association (hi-eiri-gata ippan shadan hojin) based in Machida City, Tokyo, Japan. Our work centers on a self-reliance support home (jiritsu enjo home), a residential program under Japan's Child Welfare Act for young people who are leaving foster care or children's homes, or who cannot live safely with their families.</p>
+      <p>Every person has their own appeal, something that shines as beautifully as a gem or gold. It may still be a rough stone. By bringing it out to the fullest, people can live their own lives actively. But that appeal can be covered up by their surroundings, or they may feel they have to hide it. When that happens, it becomes hard to know whose life it is or what one is worth.</p>
+      <p>Life brings one barrier after another, and we need to overcome them. Some barriers, however, cannot be overcome alone. We want to help at those moments. We aim to be a place to belong for young people at a turning point in their lives, and to support each of them to shine and live a life of their own. We think things through with them, offer a hand when they are stuck, and give them a push when they are ready to take a step.</p>
+      <p>Whatever happens, your shine is never lost. Even if things feel hard, painful or dark right now, and even if you do not feel you are shining, your worth does not disappear. Even when it is clouded over, it will shine again when polished. We prepare an environment where young people can let their own shine come out, and we polish it with care. Ahead of them lies a clear, bright sky, and under that sky, every polished gem will shine even more.</p>
+      <p>Residents live in a supported group home with dedicated staff while working or studying. We help them build daily living skills, manage money, find and keep jobs, continue their education, and stay connected after they move out.</p>
+    </div>
+  </section>
+
+  <section id="contact" style="border-bottom:0">
+    <div class="wrap">
+      <div class="eyebrow">Contact</div>
+      <h2>お問い合わせ</h2>
+      <div class="contact">
+        <div><span>メール</span><b>contact@karat-assoc.jp</b></div>
+        <div><span>所在地</span><b style="font-size:16px">〒194-0013 東京都町田市原町田4-11-13 天野ビル4F</b></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>一般社団法人カラット</span>
+    <span>© 2026 Karat Association</span>
+  </div>
+</footer>
+
+</body>
+</html>
