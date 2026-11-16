@@ -68,6 +68,14 @@ h2{font-size:clamp(22px,3.4vw,30px);margin-bottom:24px}
 .service p{margin:0;color:var(--muted);font-size:15px}
 .service h3::before{content:"◆";color:var(--gold);font-size:11px;margin-right:8px;vertical-align:2px}
 
+.subhead{font-size:20px;margin:56px 0 4px;padding-top:28px;border-top:1px solid var(--line)}
+.subhead:first-of-type{margin-top:36px;padding-top:0;border-top:0}
+.subhead span{display:inline-block;font-size:12px;letter-spacing:.12em;color:var(--on-navy);background:var(--navy-2);padding:2px 10px;border-radius:999px;margin-right:10px;vertical-align:3px;font-family:var(--body);font-weight:500}
+.subnote{color:var(--muted);font-size:15px;margin:8px 0 0;max-width:38em}
+.service.future h3::before{content:none}
+.service.future h3 b{color:var(--gold);font-family:var(--display);margin-right:8px}
+:root:not([data-theme="dark"]) .service.future h3 b{color:#9a7a2c}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .service.future h3 b{color:var(--gold)}}
 .target{margin-top:32px;background:var(--surface);border:1px solid var(--line);padding:24px;border-radius:6px;max-width:44em}
 .target dt{font-weight:700;font-size:14px;color:var(--muted)}
 .target dd{margin:0 0 12px}
@@ -166,7 +174,11 @@ footer .wrap{padding-block:28px;display:flex;justify-content:space-between;gap:1
   <section id="service">
     <div class="wrap">
       <div class="eyebrow">Service</div>
-      <h2>事業内容：自立援助ホーム</h2>
+      <h2>事業内容</h2>
+      <div class="lead">
+        <p>カラットは、青少年の社会的自立を支え、誰もが自分の人生を自分らしく能動的に生きられる社会を目指して、次の事業に取り組みます。</p>
+      </div>
+      <h3 class="subhead"><span>中核事業</span>自立援助ホーム（児童自立生活援助事業）</h3>
       <div class="lead">
         <p>自立援助ホームは、児童福祉法に基づく「児童自立生活援助事業」として、家庭や児童養護施設などを離れた若者が、共同生活を送りながら社会的な自立をめざす住まいです。</p>
       </div>
@@ -180,6 +192,17 @@ footer .wrap{padding-block:28px;display:flex;justify-content:space-between;gap:1
         <dt>対象となる方</dt>
         <dd>義務教育を終えた若者で、児童養護施設・里親家庭などを離れる方や、家庭で暮らすことが難しく、自立に向けた支援を必要とする方（入居は児童相談所を通じて決まります）</dd>
       </dl>
+
+      <h3 class="subhead"><span>今後の展開</span>段階的に取り組む事業</h3>
+      <p class="subnote">自立援助ホームを軸に、巣立ったあとまで切れ目なく支えられるよう、次の事業に段階的に取り組みます。</p>
+      <div class="service future">
+        <div><h3><b>01</b>退所後も、つながり続ける</h3><p>ホームを巣立った後のアフターケアや、自立に必要な身元保証の確保、子ども・若者の声を大切にするアドボカシー活動に取り組みます。</p></div>
+        <div><h3><b>02</b>住まいを支える</h3><p>ステップハウスやシェアハウスの運営、住まい探しの支援、一時的な生活の場の提供を通じて、住まいの不安をなくします。</p></div>
+        <div><h3><b>03</b>暮らす力を育てる</h3><p>食料や生活物資の支援に加え、家計管理や生活習慣づくりを一緒に考え、自分の力で暮らしていく土台を育てます。</p></div>
+        <div><h3><b>04</b>学びと仕事を応援する</h3><p>学習支援や進学・就学の支援、就労支援、キャリア教育を通じて、自分の未来を自分で選べるよう後押しします。</p></div>
+        <div><h3><b>05</b>居場所とつながりをつくる</h3><p>不登校の子どもへの支援やフリースクール、学習・コミュニティスペース、子ども食堂、交流イベントなど、安心して過ごせる居場所づくりに取り組みます。</p></div>
+        <div><h3><b>06</b>家庭を支える</h3><p>ひとり親家庭や産前産後の家庭への支援を通じて、子どもが育つ環境そのものを支えます。</p></div>
+      </div>
     </div>
   </section>
 
@@ -210,7 +233,7 @@ footer .wrap{padding-block:28px;display:flex;justify-content:space-between;gap:1
           <tr><th>設立</th><td>2026年7月</td></tr>
           <tr><th>法人区分</th><td>非営利型一般社団法人</td></tr>
           <tr><th>所在地</th><td>〒194-0013　東京都町田市原町田4-11-13 天野ビル4F</td></tr>
-          <tr><th>事業</th><td>自立援助ホーム（児童自立生活援助事業）の運営、社会的養護を経験した若者の自立支援</td></tr>
+          <tr><th>事業</th><td>自立援助ホーム（児童自立生活援助事業）の運営、退所後のアフターケア、住まい・生活・学び・就労の支援、子ども・若者の居場所づくりなど、青少年の社会的自立を支援する事業</td></tr>
           <tr><th>公告方法</th><td>電子公告（本ページ「電子公告」欄に掲載）</td></tr>
         </table>
       </div>
@@ -237,6 +260,7 @@ footer .wrap{padding-block:28px;display:flex;justify-content:space-between;gap:1
       <p>Life brings one barrier after another, and we need to overcome them. Some barriers, however, cannot be overcome alone. We want to help at those moments. We aim to be a place to belong for young people at a turning point in their lives, and to support each of them to shine and live a life of their own. We think things through with them, offer a hand when they are stuck, and give them a push when they are ready to take a step.</p>
       <p>Whatever happens, your shine is never lost. Even if things feel hard, painful or dark right now, and even if you do not feel you are shining, your worth does not disappear. Even when it is clouded over, it will shine again when polished. We prepare an environment where young people can let their own shine come out, and we polish it with care. Ahead of them lies a clear, bright sky, and under that sky, every polished gem will shine even more.</p>
       <p>Residents live in a supported group home with dedicated staff while working or studying. We help them build daily living skills, manage money, find and keep jobs, continue their education, and stay connected after they move out.</p>
+      <p>Building on the home, we plan to expand step by step into aftercare for young people who have left care, housing support, help with daily living and household finances, learning and employment support, safe places for children and youth to belong, and support for single-parent families and families before and after childbirth.</p>
     </div>
   </section>
 
